@@ -3,15 +3,18 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: prospector
-      url-base: https://github.com/t-ogura
+      url-base: https://github.com/t-ogura   # <-- t-ogura, not DoctorMachete
+
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.1.0
+      revision: v2.1.0          # v2.0.0 for Zephyr 3.x / ZMK ≤0.3
       path: modules/prospector-zmk-module
+
   self:
     path: config
